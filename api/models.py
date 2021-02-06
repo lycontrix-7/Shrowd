@@ -1,14 +1,14 @@
 from django.db import models
 
-class Server(models.Model):
+class PublicServer(models.Model):
 	name = models.CharField(max_length=100, unique=True)
 
 	def __str__(self):
 		return self.name
 	
-class Message(models.Model):
-	content = models.TextField()
-	server = models.ForeignKey(Server, on_delete=models.CASCADE)
+class PrivateServer(models.Model):
+	name = models.CharField(max_length=100, unique=True)
+	password = models.CharField(max_length=100)
 
 	def __str__(self):
-		return self.content
+		return self.name

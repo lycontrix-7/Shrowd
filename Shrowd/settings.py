@@ -59,7 +59,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'Shrowd.urls'
-ASGI_APPLICATION = "Shrowd.asgi.application"
+ASGI_APPLICATION = 'Shrowd.asgi.application'
 
 CHANNEL_LAYERS = {
     'default': {

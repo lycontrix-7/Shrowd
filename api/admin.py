@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Server, Message
+from .models import PrivateServer, PublicServer
 
-admin.site.register(Server)
-admin.site.register(Message)
+admin.site.register(PublicServer)
+admin.site.register(PrivateServer)
