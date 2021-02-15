@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import PublicServer, PrivateServer
-from django.contrib.auth.models import User
 
 class PublicServerSerializer(serializers.ModelSerializer):
     class Meta:

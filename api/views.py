@@ -59,13 +59,27 @@ class PrivateCreateView(APIView):
 class PrivateJoinView(APIView):
 
 	def post(self, request, format=None):
+		
 		name = request.data.get('name')
 		password = request.data.get('password')
 		if name != None:
-			queryset = PrivateServer.objects.filter(name=name)
-			if len(name_result) > 0:
-				if name_result.password == password:
+			queryset = PrivateServer.objects.filter(name=name).first()
+			if queryset:
+				if queryset.password == password:
 					return Response({'message': 'Server Joined!'}, status=status.HTTP_200_OK)
 				return Response({'Wrong Password': 'Cannot join wrong password'}, status=status.HTTP_401_UNAUTHORIZED) 
 			return Response({'Bad Request': 'Invalid Server Name'}, status=status.HTTP_400_BAD_REQUEST)
-		return Response({'Bad Request': 'Invalid post data, did not find a server key'}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'Bad Request': 'Invalid post data, did not find a server name'}, status=status.HTTP_400_BAD_REQUEST)
+		 
+		# serializer = PrivateServerSerializer(data=request.data)
+		
+		# if serializer.is_valid():
+		# 	name = serializer.data.get('name')
+		# 	password = serializer.data.get('password')
+		# 	queryset = PrivateServer.objects.filter(name=name).first()		
+		# 	if queryset.exists():	
+		# 		if queryset.password == password:
+		# 			return Response({'message': 'Server Joined!'}, status=status.HTTP_200_OK)
+		# 		return Response({'Wrong Password': 'Cannot join wrong password'}, status=status.HTTP_401_UNAUTHORIZED)
+		# 	return Response({'No req': 'Invalid Server Name'}, status=status.HTTP_400_BAD_REQUEST)
+		# return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
