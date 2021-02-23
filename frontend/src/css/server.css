@@ -1,0 +1,56 @@
+.server {
+    display: flex;
+    flex-direction: column;
+    background-color: #36393f;
+}
+
+.message-log {
+    margin: 1.5em 0em;
+}
+
+.message {
+    padding: 0.5em 1.5em;
+    display: block;
+    font-family: ubuntu;
+    line-height: 1.2em;
+    letter-spacing: 0.07em;
+    font-weight: 300;
+    font-size: 15px;
+    color: #dcddde;
+}
+
+.message:hover {
+    background-color: #292b2f;
+}
+
+.message-input {
+    position: fixed;
+    padding: 0.5em 1.5em;
+    width: 100vw;
+    border: none;
+    height: 2em;
+    bottom: 0%;
+    
+    /* font */
+    letter-spacing: 0.07em;
+    font-size: 17px;
+    background-color: #2f3136;
+    color: #dcddde;
+    font-family: ubuntu;
+}
+
+.message-submit {
+    position: fixed;
+    background: none;
+    cursor: pointer;
+    color: #b9bbbe;
+    border: 0;
+    bottom: 0.9%;
+    right: 2%;
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.message-submit:hover {
+    transform: scale(1.5);
+}

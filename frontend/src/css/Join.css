@@ -1,0 +1,112 @@
+.Join {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: repeat(4, 1fr);
+    width: 40vw;
+    margin: auto;
+    background-color: gray;
+}
+
+.Join > div {
+    border: 4px blue solid;
+}
+
+.name {
+    padding: 15px 30px;
+    border-radius: 30px;
+    background-color: #2f3136;
+    border: none;
+    width: 25vw;
+    font-family: ubuntu;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.07em;
+    color: #dcddde;
+    
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+
+.submitJoin {
+    position: relative;
+    border-radius: 30px;
+    border: none;
+    background-color: #b9bbbe;
+    padding: 5px 12px;
+    font-size: 20px;
+    transition: transform 0.2s;
+    
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.submitJoin:hover {
+    transform: scale(1.25);
+}
+
+.password {
+    display: none;
+    
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
+
+.passwordText {
+    color: #dcddde;
+    margin: 15px 0px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    font-family: ubuntu;
+}
+
+.passwordInput {
+    padding: 15px 30px;
+    border-radius: 30px;
+    background-color: #2f3136;
+    border: none;
+    
+    font-family: ubuntu;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.07em;
+    color: #dcddde;
+}
+
+.privateChange {
+    display: block;
+    
+}
+
+.publicChange {
+    display: none;
+}
+
+.typeCommon {
+    margin: 15px 0px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    font-family: ubuntu;
+    font-size: 15px;
+    color: #dcddde;
+    text-align: right;
+    
+    grid-row: 4/5;
+    grid-column: 1/2;
+}
+
+.typeCommon:hover {
+    color: #7289da;
+}
+
+.error {
+    margin: 15px 0px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    font-family: ubuntu;
+    width: 20vw;
+}
+
+input:focus {
+    outline: 0;
+}

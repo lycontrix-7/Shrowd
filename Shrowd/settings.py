@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'channels',
     'corsheaders',
     'api.apps.ApiConfig',
-    'frontend.apps.FrontendConfig',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
