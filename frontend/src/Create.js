@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './css/auth.css';
 
 export default class Create extends Component {
     constructor(props) {
         super(props);
         this.state = {
             message: '',
-            server_type: '',
+            server_type: 's',
             name: '',
             password: '',
         }
@@ -29,8 +30,19 @@ export default class Create extends Component {
     }
 
     handleType (e) {
+        if (e.target.id === "s") {
+            document.querySelector(".password").style.display = "none";
+            e.target.style.display = "none";
+            document.querySelector(".privateChange").style.display = "block";
+        }
+        if (e.target.id === "p") {
+            document.querySelector(".password").style.display = "block";
+            e.target.style.display = "none";
+            document.querySelector(".publicChange").style.display = "block";
+        }
+            
         this.setState({
-            server_type: e.target.value
+            server_type: e.target.id
         });
     }
 
@@ -61,20 +73,23 @@ export default class Create extends Component {
 
     render() {
         return(
-            <div className="Create">
-                {this.state.message}
-                Name:
-                <input type="text" onChange={this.handleNameChange}/><br/>
-                Password:
-                <input type="text" onChange={this.handlePasswordChange}/><br/><br/>             
-                
-                Server Type:<br/>
-                <input type="radio" id="public-server" name="server-type" value="s" onChange={this.handleType}/>
-                <label htmlFor="public-server">Public</label><br/>
-                <input type="radio" id="private-server" name="server-type" value="p" onChange={this.handleType}/>
-                <label htmlFor="private-server">Private</label><br/><br/>
-
-                <button onClick={this.handleSubmit}>Create</button>
+            <div className="auth-form">
+                <div className="main">
+                    <div className="error">{this.state.message}</div>
+                    
+                    <div className="name-area">
+                        <input className="name" type="text" onChange={this.handleNameChange} />
+                        <input className="submit-form" onClick={this.handleSubmit} type="button" value="➤" />
+                    </div>
+                    
+                    <div className="password">
+                        <div className="passwordText">Password :</div>
+                        <input className="passwordInput" type="text" onChange={this.handlePasswordChange} />             
+                    </div>
+                    
+                    <div onClick={this.handleType} id="p" className="privateChange typeCommon">Create Private Server ?</div>
+                    <div onClick={this.handleType} id="s" className="publicChange typeCommon">Create Public Server ?</div>
+                </div>
             </div>
         );
     }

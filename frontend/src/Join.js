@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './css/Join.css';
+import './css/auth.css';
 
 export default class Join extends Component {
     constructor(props) {
         super(props);
         this.state = {
             message: '',
-            server_type: '',
+            server_type: 's',
+            name: '',
             password: '',
         }
 
@@ -41,7 +42,7 @@ export default class Join extends Component {
         }
             
         this.setState({
-            server_type: e.target.value
+            server_type: e.target.id
         });
     }
 
@@ -69,21 +70,23 @@ export default class Join extends Component {
 
     render() {
         return(
-            <div className="Join">
-                
-                <div className="error">{this.state.message}</div>
-                
-                <input className="name" type="text" onChange={this.handleNameChange} />
-                <input className="submitJoin" onClick={this.handleSubmit} type="button" value="→" />
-                
-                <div className="password">
-                    <div className="passwordText">Password :</div>
-                    <input className="passwordInput" type="text" onChange={this.handlePasswordChange} />             
+            <div className="auth-form">
+                <div className="main">
+                    <div className="error">{this.state.message}</div>
+                    
+                    <div className="name-area">
+                        <input className="name" type="text" onChange={this.handleNameChange} />
+                        <input className="submit-form" onClick={this.handleSubmit} type="button" value="➤" />
+                    </div>
+                    
+                    <div className="password">
+                        <div className="passwordText">Password :</div>
+                        <input className="passwordInput" type="text" onChange={this.handlePasswordChange} />             
+                    </div>
+                    
+                    <div onClick={this.handleType} id="p" className="privateChange typeCommon">Join Private Server ?</div>
+                    <div onClick={this.handleType} id="s" className="publicChange typeCommon">Join Public Server ?</div>
                 </div>
-                
-                <div onClick={this.handleType} id="p" className="privateChange typeCommon">Join Private Server ?</div>
-                <div onClick={this.handleType} id="s" className="publicChange typeCommon">Join Public Server ?</div>
-                
             </div>
         );
     }
