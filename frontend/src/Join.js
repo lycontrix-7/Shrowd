@@ -16,7 +16,7 @@ export default class Join extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleType = this.handleType.bind(this);
     }
-
+    
     handleNameChange (e) {
         this.setState({
             name: e.target.value
@@ -30,15 +30,21 @@ export default class Join extends Component {
     }
 
     handleType (e) {
+        var password = document.querySelector(".password")
+        
         if (e.target.id === "s") {
-            document.querySelector(".password").style.display = "none";
+            // password.style.display = "none";
             e.target.style.display = "none";
             document.querySelector(".privateChange").style.display = "block";
+            
+            password.style.height = "0px"
         }
         if (e.target.id === "p") {
-            document.querySelector(".password").style.display = "block";
+            // password.style.display = "block";
             e.target.style.display = "none";
             document.querySelector(".publicChange").style.display = "block";
+            
+            password.style.height = "100px"
         }
             
         this.setState({

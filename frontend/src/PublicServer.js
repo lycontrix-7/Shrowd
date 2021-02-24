@@ -11,6 +11,8 @@ export default class PublicServer extends Component {
     }
 
     componentDidMount () {
+        document.querySelector(".message-input").focus();
+        
         const chatSocket = new WebSocket(
             'ws://127.0.0.1:8000/ws/s_'
             + this.name

@@ -1,7 +1,7 @@
 /* WITH FLEX */
 
 .auth-form {
-    width: 360px;
+    width: 390px;
     height: 100vh;
     margin: auto;
 }
@@ -11,24 +11,24 @@
     flex-direction: column;
     row-gap: 1em;
     
-    padding-top: 40vh;
+    padding-top: 35vh;
 }
 
 .error {
-    padding-left: 1.5vw;
-    font-weight: 300;
+    width: 320px;
+    padding-left: 1.25vw;
+    font-weight: 500;
     letter-spacing: 0.08em;
     font-family: ubuntu;
-    width: 20vw;
-    color: #dcddde;
+    color: #ba364c;
 }
 
 .name {
-    padding: 15px 30px;
+    padding: 15px 70px 15px 30px;
     border-radius: 30px;
     background-color: #2f3136;
     border: none;
-    width: 250px;
+    width: 240px;
     font-family: ubuntu;
     font-weight: 300;
     font-size: 20px;
@@ -38,15 +38,14 @@
 
 
 .submit-form {
-    background: none;
+    background-color: #2f3136;
     color: #b9bbbe;
-    font-size: 50px;
     
     position: relative;
     border-radius: 40px;
     border: none;
     padding: 5px 12px;
-    font-size: 20px;
+    font-size: 22px;
     
     right: 60px;
     
@@ -58,11 +57,14 @@
 }
 
 .password {
-    display: none;
+    transition: height 0.3s ease-in-out;
+    
+    height: 0px;
+    overflow: hidden;
 }
 
 .passwordText {
-    padding-left: 1.5vw;
+    padding-left: 1.25vw;
     color: #dcddde;
     margin-bottom: 15px;
     font-weight: 300;
@@ -71,7 +73,7 @@
 }
 
 .passwordInput {
-    width: 250px;
+    width: 280px;
     padding: 15px 30px;
     border-radius: 30px;
     background-color: #2f3136;
@@ -85,15 +87,18 @@
 }
 
 .privateChange {
+    height: 0;
     display: block;
-    
 }
 
 .publicChange {
+    height: 0;
     display: none;
 }
 
 .typeCommon {
+    transform: translate(0, -12px);
+    
     padding-right: 60px;
     font-weight: 300;
     letter-spacing: 0.08em;
